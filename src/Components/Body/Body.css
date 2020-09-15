@@ -1,0 +1,35 @@
+.main-body{
+    min-height: 50vh;
+}
+.main-body h1{
+    font-size: 70px;
+}
+.main-body .destination-info{
+    color: white;
+}
+.main-body .booking{
+    width: 120px;
+    border: none;
+    outline: none;
+    background: #F9A51A;
+    padding: 10px 25px;
+    border-radius: 7px;
+    font-weight: 500;
+}
+.main-body .row{
+    min-height: 50vh;
+}
+.main-body .card{
+    min-height: 400px;
+    background: #F9A51A;
+    margin: 10px 10px;
+    min-width: 250px;
+    background-image: url('../../Resources//Image/sundorbon.png');
+    background-position: center;
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    color: white;
+}
+/* .main-body */

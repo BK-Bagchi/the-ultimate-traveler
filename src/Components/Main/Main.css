@@ -1,0 +1,9 @@
+.main-container{
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../Resources/Image/Rectangle1.png');
+    background-position: center;
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    padding: 0 50px;
+}

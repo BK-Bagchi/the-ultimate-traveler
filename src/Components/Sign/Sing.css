@@ -1,0 +1,33 @@
+.head{
+    margin: 40px 0;
+}
+.head .logo{
+    width: 300px;
+}
+.sign{
+    width:40%;
+    background: white;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+.sign .form{
+    width: 100%;
+}
+.sign input{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid lightgrey;
+    margin: 15px 0;
+    height: 45px;
+    width: 80%;
+    padding: 0 10px;
+}
+.sign input[type="submit"]{
+    background: #F9A51A;
+    color: white;
+    border: none;
+}
+.sign span{
+    color:#F9A51A;
+    cursor: pointer;
+}
