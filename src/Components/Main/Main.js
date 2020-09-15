@@ -5,6 +5,7 @@ import SignIn from '../Sign/Signin';
 import Signup from '../Sign/Signup';
 import './Main.css'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Location from '../Location/Location';
 
 const Main = () => {
     return (
@@ -22,6 +23,7 @@ const Main = () => {
                         <Signup />
                     </Route>
                 </Switch>
+                <Location />
             </Router>
         </main>
     );
