@@ -31,7 +31,7 @@ const Main = () => {
                             <Signup />
                             <Firebase />
                         </Route>
-                        <Route path="/booking">
+                        <Route path="/booking/:id">
                             <LocationDetail />
                         </Route>
                         <PrivateRouter path="/location">

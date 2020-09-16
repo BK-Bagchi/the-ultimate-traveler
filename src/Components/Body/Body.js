@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Body.css';
 import { useHistory } from 'react-router-dom';
+import LocationInfo from '../Database/LocationInfo';
+
 
 const Body = () => {
     const history = useHistory();
+    const [locationId, setLocationId] = useState(1);
+    const locationDetail = LocationInfo.filter(location => location.id === locationId)
+
     return (
         <section className="main-body">
             <div className="row">
-                <div className="col-md-5 destination-info">
-                    <h1 className="my-3">Cox's Bazar</h1>
-                    <h6 className="my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque magnam pariatur molestiae quam tempora nobis tempore a porro possimus. Modi fugit illo minus reiciendis corrupti ab architecto rerum omnis voluptatem.</h6>
-                    <button className="booking my-3" onClick={() => history.push('/booking')}>Booking</button>
-                </div>
+                {
+                    locationDetail.map(location => {
+                        return (
+                            <div className="col-md-5 destination-info" key={location.id}>
+                                <h1 className="my-3">{location.location}</h1>
+                                <h6 className="my-2">{location.shortDescription}</h6>
+                                <button className="booking my-3" onClick={() => history.push(`/booking/${location.id}`)}>Booking</button>
+                            </div>
+                        )
+                    })
+                }
                 <div className="col-md-7 d-flex flex-wrap justify-content-center">
-                    <div className="card">
-                        <h3 className="mt-auto mb-5 ml-3">Cox's Bazar</h3>
-                    </div>
-                    <div className="card">
-                        <h3 className="mt-auto mb-5 ml-3">Sreemangal</h3>
-                    </div>
-                    <div className="card">
-                        <h3 className="mt-auto mb-5 ml-3">Sundarbans</h3>
-                    </div>
+                    {
+                        LocationInfo.map((location) => {
+                            return (
+                                <div key={location.id} className={`card ${location.section}`} onClick={() => setLocationId(location.id)}>
+                                    <h3 className="mt-auto mb-5 ml-3">{location.location}</h3>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </section>

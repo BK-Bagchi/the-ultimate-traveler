@@ -24,12 +24,20 @@
     background: #F9A51A;
     margin: 10px 10px;
     min-width: 250px;
-    background-image: url('../../Resources//Image/sundorbon.png');
     background-position: center;
     background-size: cover;
     background-origin: border-box;
     background-repeat: no-repeat;
     border-radius: 12px;
     color: white;
+}
+.main-body .one{
+    background-image: url('../../Resources//Image/Rectangle28.png');
+}
+.main-body .two{
+    background-image: url('../../Resources//Image/Sreemongol.png');
+}
+.main-body .three{
+    background-image: url('../../Resources//Image/sundorbon.png');
 }
 /* .main-body */

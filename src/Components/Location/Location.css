@@ -1,5 +1,6 @@
 .location{
     background: white;
+    border-radius: 7px;
 }
 .location-detail{
     color: white;
