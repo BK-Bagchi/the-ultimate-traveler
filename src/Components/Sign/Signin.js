@@ -9,9 +9,12 @@ const SignIn = () => {
             <div className="form">
                 <h5 className="text-center mb-4">Login into your account</h5>
                 <form className="d-flex flex-column align-items-center">
-                    <input type="text" placeholder="Enter name" />
                     <input type="email" placeholder="Enter email" />
+                    <span className="align-self-start"></span>
+
                     <input type="password" placeholder="Enter password" />
+                    <span className="align-self-start"></span>
+
                     <input type="submit" value="Sign In" />
                 </form>
             </div>

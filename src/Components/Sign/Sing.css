@@ -13,6 +13,14 @@
 .sign .form{
     width: 100%;
 }
+.sign .form span{
+    color: red;
+    margin: -15px 0 0 10%;
+}
+.sign .form span::before{
+    content:"*";
+    color: red;
+}
 .sign input{
     border: none;
     background: transparent;
