@@ -57,15 +57,9 @@ const Signup = () => {
         }
         else if (fieldName === 'userName') {
             if (fieldValue !== " " && fieldValue.length >= 3 && /[a-zA-Z]{3,}/.test(fieldValue)) {
-                // isFormValid = true
-                // setErrorMessage({ ...error, name: '' })
-                // getFormData({ ...formData, name: fieldValue })
                 crossCheck('name', 'displayName', fieldValue, true, '')
             }
             else {
-                // isFormValid = false
-                // setErrorMessage({ ...error, name: 'Enter your valid name' })
-                // getFormData({ ...formData, name: '' })
                 crossCheck('name', 'displayName', '', false, 'Enter your valid name')
             }
         }
