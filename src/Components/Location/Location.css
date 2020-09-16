@@ -2,6 +2,9 @@
     background: white;
     border-radius: 7px;
 }
+.location i{
+    color: #F9A51A;
+}
 .location-detail{
     color: white;
 }

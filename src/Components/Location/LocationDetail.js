@@ -7,6 +7,7 @@ const LocationDetail = () => {
     const history = useHistory();
     const { id } = useParams();
     const locationDetail = LocationInfo.filter(location => location.id === Number(id));
+    console.log(locationDetail[0].id);
 
     return (
         <section className="location-detail mt-5">
@@ -32,7 +33,7 @@ const LocationDetail = () => {
 
                         <span className="align-self-start">Form</span>
                         <input type="text" placeholder="now" />
-                        <input type="submit" value="Start Booking" onClick={() => history.push("/location")} />
+                        <input type="submit" value="Start Booking" onClick={() => history.push(`/location/${locationDetail[0].id}`)} />
                     </form>
                 </div>
             </div>

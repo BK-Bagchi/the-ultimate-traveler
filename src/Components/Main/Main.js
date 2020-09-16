@@ -34,7 +34,7 @@ const Main = () => {
                         <Route path="/booking/:id">
                             <LocationDetail />
                         </Route>
-                        <PrivateRouter path="/location">
+                        <PrivateRouter path="/location/:id">
                             <Location />
                         </PrivateRouter>
                     </Switch>
