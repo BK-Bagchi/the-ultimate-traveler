@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Sing.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
@@ -8,16 +8,30 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import firebaseConfig from './FirebaseConfig';
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import { GlobalData } from '../Main/Main';
 
 firebase.initializeApp(firebaseConfig);
 const Firebase = () => {
+    const [loginInfo, setLoginInfo] = useContext(GlobalData);
+    const receivedLoginInfo = (name, email) => {
+        setLoginInfo({
+            ...loginInfo,
+            isLoggedIn: true,
+            displayName: name,
+            email: email
+        })
+    }
+
+
     /*---------------google authentication-----------------*/
     const google = new firebase.auth.GoogleAuthProvider();
     const googleAuth = () => {
         firebase.auth().signInWithPopup(google)
             .then((result) => {
-                console.log(result);
-            }).catch((error) => {
+                const { displayName, email } = result.user
+                receivedLoginInfo(displayName, email)
+            })
+            .catch((error) => {
                 const { code, message, email, credential } = error;
                 console.log(code, "| |", message, "| |", email, "| |", credential);
             });
@@ -30,8 +44,10 @@ const Firebase = () => {
     const facebookAuth = () => {
         firebase.auth().signInWithPopup(facebook)
             .then((result) => {
-                console.log(result);
-            }).catch((error) => {
+                const { displayName, email } = result.user
+                receivedLoginInfo(displayName, email)
+            })
+            .catch((error) => {
                 const { code, message, email, credential } = error;
                 console.log(code, "| |", message, "| |", email, "| |", credential);
             });
@@ -44,8 +60,10 @@ const Firebase = () => {
     const twitterAuth = () => {
         firebase.auth().signInWithPopup(twitter)
             .then((result) => {
-                console.log(result);
-            }).catch((error) => {
+                const { displayName, email } = result.user
+                receivedLoginInfo(displayName, email)
+            })
+            .catch((error) => {
                 const { code, message, email, credential } = error;
                 console.log(code, "| |", message, "| |", email, "| |", credential);
             });
