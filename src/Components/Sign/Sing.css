@@ -21,13 +21,38 @@
     height: 45px;
     width: 80%;
     padding: 0 10px;
+    outline: none;
 }
 .sign input[type="submit"]{
     background: #F9A51A;
     color: white;
     border: none;
+    border-radius: 5px;
 }
 .sign span{
     color:#F9A51A;
     cursor: pointer;
+}
+.firebase-online-accounts{
+    color: white;
+    width: 20%;
+}
+.firebase-online-accounts .brands{
+    font-size: 50px;
+    cursor: pointer;
+}
+.firebase-online-accounts .google{
+    color: #ef5777;
+}
+.firebase-online-accounts .facebook{
+    color: #5352ed;
+}
+.firebase-online-accounts .twitter{
+    color: #1e90ff;
+}
+.firebase-online-accounts .continue-with{
+    font-size: 17px;
+    border-bottom: 1px solid white;
+    width: 70%;
+    margin:0 auto;
 }
