@@ -8,6 +8,7 @@ import Location from '../Location/Location';
 import Firebase from '../Sign/Firebase';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LocationDetail from '../Location/LocationDetail';
+import PrivateRouter from '../PrivateRouter/PrivateRouter';
 
 export const GlobalData = React.createContext();
 const Main = () => {
@@ -33,9 +34,9 @@ const Main = () => {
                         <Route path="/booking">
                             <LocationDetail />
                         </Route>
-                        <Route path="/booking">
+                        <PrivateRouter path="/location">
                             <Location />
-                        </Route>
+                        </PrivateRouter>
                     </Switch>
                 </Router>
             </GlobalData.Provider>

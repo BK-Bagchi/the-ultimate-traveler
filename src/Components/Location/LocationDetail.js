@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './Location.css';
 
 const LocationDetail = () => {
+    const history = useHistory();
     return (
         <section className="location-detail mt-5">
             <div className="row">
@@ -20,7 +22,7 @@ const LocationDetail = () => {
 
                         <span className="align-self-start">Form</span>
                         <input type="text" placeholder="now" />
-                        <input type="submit" value="Start Booking" />
+                        <input type="submit" value="Start Booking" onClick={() => history.push("/location")} />
                     </form>
                 </div>
             </div>

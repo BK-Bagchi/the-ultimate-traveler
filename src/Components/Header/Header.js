@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MainLogo from '../../Resources/Logo.png'
 import './Header.css'
 import { Link, useHistory } from 'react-router-dom';
+import { GlobalData } from '../Main/Main';
 
 const Header = () => {
+    const [loginInfo] = useContext(GlobalData);
     const history = useHistory();
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,7 +24,11 @@ const Header = () => {
                     <li className="nav-item active"> Destination</li>
                     <li className="nav-item active"> Blog</li>
                     <li className="nav-item active"> Contact</li>
-                    <button className="login" onClick={() => history.push("/login")}>Login</button>
+                    {
+                        loginInfo.isLoggedIn ?
+                            <button className="login" onClick={() => history.push("/")}>Profile</button> :
+                            <button className="login" onClick={() => history.push("/login")}>Login</button>
+                    }
                 </ul>
             </div>
         </nav>

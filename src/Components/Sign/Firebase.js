@@ -9,9 +9,14 @@ import firebaseConfig from './FirebaseConfig';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { GlobalData } from '../Main/Main';
+import { useHistory, useLocation } from 'react-router-dom';
 
 firebase.initializeApp(firebaseConfig);
 const Firebase = () => {
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
+
     const [loginInfo, setLoginInfo] = useContext(GlobalData);
     const receivedLoginInfo = (name, email) => {
         setLoginInfo({
@@ -20,6 +25,7 @@ const Firebase = () => {
             displayName: name,
             email: email
         })
+        history.replace(from);
     }
 
 
