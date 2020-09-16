@@ -7,6 +7,7 @@ import Signup from '../Sign/Signup';
 import Location from '../Location/Location';
 import Firebase from '../Sign/Firebase';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LocationDetail from '../Location/LocationDetail';
 
 const Main = () => {
     return (
@@ -24,6 +25,9 @@ const Main = () => {
                     <Route path="/signup">
                         <Signup />
                         <Firebase />
+                    </Route>
+                    <Route path="/booking">
+                        <LocationDetail />
                     </Route>
                 </Switch>
                 {/* <Location /> */}

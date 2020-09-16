@@ -25,7 +25,7 @@
 }
 .sign input[type="submit"]{
     background: #F9A51A;
-    color: white;
+    font-weight: 500;
     border: none;
     border-radius: 5px;
 }

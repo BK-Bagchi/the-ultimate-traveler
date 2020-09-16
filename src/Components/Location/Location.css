@@ -1,3 +1,37 @@
 .location{
     background: white;
 }
+.location-detail{
+    color: white;
+}
+.location-detail h1{
+    font-size: 70px;
+}
+.location-detail .submit-info input{
+    border: none;
+    background: #F2F2F2;
+    margin: 15px 0;
+    height: 45px;
+    width: 80%;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 5px;
+}
+.location-detail .submit-info input[type="submit"]{
+    background: #F9A51A;
+    height: 55px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+}
+.location-detail .submit-info{
+    background: white;
+    width: 70%;
+    border-radius: 5px;
+    padding: 20px 0;
+}
+.submit-info span{
+    color: black;
+    text-align: left !important;
+    margin: 0 0 -15px 10%;
+}
