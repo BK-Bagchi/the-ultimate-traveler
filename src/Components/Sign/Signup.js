@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Sing.css';
 import { useHistory } from 'react-router-dom';
 
-let tempPassword = '', isFormValid = false;
+let tempPassword = ''
 const Signup = () => {
     const history = useHistory();
     const [error, setErrorMessage] = useState({
@@ -17,10 +17,9 @@ const Signup = () => {
         password: ''
     })
 
-    const crossCheck = (errorKey, formKey, value, boolean, err) => {
+    const crossCheck = (errorKey, formKey, value, err) => {
         getFormData({ ...formData, [formKey]: value })
         setErrorMessage({ ...error, [errorKey]: err })
-        isFormValid = boolean
     }
 
     const formFieldValidation = (e) => {
@@ -28,48 +27,44 @@ const Signup = () => {
         const fieldValue = e.target.value;
 
         if (fieldName === 'userEmail') {
-            const regex = /\S+@\S+\.\S+/;
             if (/\S+@\S+\.\S+/.test(fieldValue)) {
-                crossCheck('email', 'email', fieldValue, true, '')
+                crossCheck('email', 'email', fieldValue, '')
             }
             else {
-                crossCheck('email', 'email', '', false, 'Email not valid')
+                crossCheck('email', 'email', '', 'Email not valid')
             }
         }
         else if (fieldName === 'password') {
             if (fieldValue.length >= 8 && /[a-zA-Z]{3,}/.test(fieldValue)) {
                 tempPassword = fieldValue
-                isFormValid = true
                 setErrorMessage({ ...error, password: '' })
             }
             else {
-                isFormValid = false
                 setErrorMessage({ ...error, password: 'Must use 3 or more letter. Total 8 or more digit' })
             }
         }
         else if (fieldName === 'confirmPassword') {
             if (tempPassword === fieldValue) {
-                crossCheck('confirmPassword', 'password', fieldValue, true, '')
+                crossCheck('confirmPassword', 'password', fieldValue, '')
             }
             else {
-                crossCheck('confirmPassword', 'password', '', false, 'Enter same password in 2 fields')
+                crossCheck('confirmPassword', 'password', '', 'Enter same password in 2 fields')
             }
         }
         else if (fieldName === 'userName') {
             if (fieldValue !== " " && fieldValue.length >= 3 && /[a-zA-Z]{3,}/.test(fieldValue)) {
-                crossCheck('name', 'displayName', fieldValue, true, '')
+                crossCheck('name', 'displayName', fieldValue, '')
             }
             else {
-                crossCheck('name', 'displayName', '', false, 'Enter your valid name')
+                crossCheck('name', 'displayName', '', 'Enter your valid name')
             }
         }
     }
 
-
-    // console.log(formData);
     const createAccount = (e) => {
-        e.preventDefault();
-        if (isFormValid) {
+        e.preventDefault()
+        const { displayName, email, password } = formData
+        if (displayName && email && password) {
             console.log(formData);
             console.log(error);
         }
