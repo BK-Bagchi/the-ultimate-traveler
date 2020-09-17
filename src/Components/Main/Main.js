@@ -3,9 +3,7 @@ import './Main.css'
 import Body from '../Body/Body';
 import Header from '../Header/Header';
 import SignIn from '../Sign/Signin';
-import Signup from '../Sign/Signup';
 import Location from '../Location/Location';
-import Firebase from '../Sign/Firebase';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LocationDetail from '../Location/LocationDetail';
 import PrivateRouter from '../PrivateRouter/PrivateRouter';
@@ -25,11 +23,6 @@ const Main = () => {
                         </Route>
                         <Route path="/login">
                             <SignIn />
-                            <Firebase />
-                        </Route>
-                        <Route path="/signup">
-                            <Signup />
-                            <Firebase />
                         </Route>
                         <Route path="/booking/:id">
                             <LocationDetail />
