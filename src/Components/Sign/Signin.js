@@ -70,11 +70,8 @@ const SignIn = () => {
         e.preventDefault();
         const { email, password } = sinInFormData;
         if (email && password) {
-            console.log(sinInFormData);
-            console.log(signInError);
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(res => {
-                    console.log(res);
                     receivedLoginInfo(res.user.displayName, res.user.email)
                 })
                 .catch((error) => {
@@ -162,11 +159,8 @@ const SignIn = () => {
         e.preventDefault()
         const { displayName, email, password } = signUpFormData
         if (displayName && email && password) {
-            console.log(signUpFormData);
-            console.log(singUpError);
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then(response => {
-                    console.log(response);
                     setSwitchForm(true)
                     updateUserInfo(displayName)
                     receivedLoginInfo(displayName, email)

@@ -2,13 +2,17 @@
     min-height: 50vh;
 }
 .main-body h1{
-    font-size: 70px;
+    font-size: 100px;
+    font-family: 'Bebas Neue', cursive;
+}
+.main-body h6{
+    font-family: 'Montserrat', sans-serif;
 }
 .main-body .destination-info{
     color: white;
 }
 .main-body .booking{
-    width: 120px;
+    width: 150px;
     border: none;
     outline: none;
     background: #F9A51A;

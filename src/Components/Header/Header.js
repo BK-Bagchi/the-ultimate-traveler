@@ -26,7 +26,7 @@ const Header = () => {
                     <li className="nav-item active"> Contact</li>
                     {
                         loginInfo.isLoggedIn ?
-                            <button className="login" onClick={() => history.push("/")}>Profile</button> :
+                            <li className="nav-item active text-capitalize font-italic">{loginInfo.displayName}</li> :
                             <button className="login" onClick={() => history.push("/login")}>Login</button>
                     }
                 </ul>

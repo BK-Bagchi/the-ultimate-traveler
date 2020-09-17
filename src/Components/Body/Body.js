@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './Body.css';
 import { useHistory } from 'react-router-dom';
 import LocationInfo from '../Database/LocationInfo';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Body = () => {
     const history = useHistory();
@@ -18,7 +19,7 @@ const Body = () => {
                             <div className="col-md-5 destination-info" key={location.id}>
                                 <h1 className="my-3">{location.location}</h1>
                                 <h6 className="my-2">{location.shortDescription}</h6>
-                                <button className="booking my-3" onClick={() => history.push(`/booking/${location.id}`)}>Booking</button>
+                                <button className="booking my-3" onClick={() => history.push(`/booking/${location.id}`)}>Booking &nbsp;&nbsp; <FontAwesomeIcon icon={faArrowRight} /></button>
                             </div>
                         )
                     })

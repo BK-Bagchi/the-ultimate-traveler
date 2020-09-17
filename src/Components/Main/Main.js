@@ -11,7 +11,7 @@ import PrivateRouter from '../PrivateRouter/PrivateRouter';
 export const GlobalData = React.createContext();
 const Main = () => {
     const [loginInfo, setLoginInfo] = useState({});
-    console.log(loginInfo);
+
     return (
         <main className="main-container m-0">
             <GlobalData.Provider value={[loginInfo, setLoginInfo]}>

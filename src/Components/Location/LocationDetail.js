@@ -16,7 +16,7 @@ const LocationDetail = () => {
     const fieldValueValidation = (e) => {
         const fieldName = e.target.name
         const fieldValue = e.target.value
-        console.log(fieldValue);
+
         if (fieldName === 'origin') {
             if (/[a-zA-Z]{3,}/.test(fieldValue)) {
                 setError({ ...error, origin: '' })
@@ -45,7 +45,6 @@ const LocationDetail = () => {
 
     const startBooking = (e) => {
         e.preventDefault()
-        console.log(error);
         const { origin, from, to } = error;
         if (!origin && !from && !to) {
             history.push(`/location/${locationDetail[0].id}`)
@@ -61,7 +60,7 @@ const LocationDetail = () => {
                         return (
                             <div className="col-md-6 d-flex flex-column justify-content-center" key={location.id}>
                                 <h1>{location.location}</h1>
-                                <p>{location.detailDescription}</p>
+                                <h6>{location.detailDescription}</h6>
                             </div>
                         )
                     })
