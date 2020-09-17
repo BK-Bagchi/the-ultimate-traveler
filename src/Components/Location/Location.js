@@ -41,7 +41,9 @@ const Location = () => {
                         }
                     </div>
                 </div>
-                <div className="col-md-6">Map coming soon</div>
+                <div className="col-md-6">
+                    <iframe src={location[0].map} width="100%" height="100%" frameBorder="0" style={{ border: "0" }} allowFullScreen="" ariHidden="false" tabIndex="0"></iframe>
+                </div>
             </div>
         </section>
     );

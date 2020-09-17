@@ -6,7 +6,7 @@ import LocationInfo from '../Database/LocationInfo';
 
 const Body = () => {
     const history = useHistory();
-    const [locationId, setLocationId] = useState(1);
+    const [locationId, setLocationId] = useState(3);
     const locationDetail = LocationInfo.filter(location => location.id === locationId)
 
     return (
