@@ -1,0 +1,11 @@
+.not-found h1{
+    color: white;
+}
+.not-found .back-to-home{
+    background: #F9A51A;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px
+}

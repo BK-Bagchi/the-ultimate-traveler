@@ -7,6 +7,7 @@ import Location from '../Location/Location';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LocationDetail from '../Location/LocationDetail';
 import PrivateRouter from '../PrivateRouter/PrivateRouter';
+import NotFound from '../NotFound/NotFound';
 
 export const GlobalData = React.createContext();
 const Main = () => {
@@ -30,6 +31,9 @@ const Main = () => {
                         <PrivateRouter path="/location/:id">
                             <Location />
                         </PrivateRouter>
+                        <Route path="*">
+                            <NotFound />
+                        </Route>
                     </Switch>
                 </Router>
             </GlobalData.Provider>
