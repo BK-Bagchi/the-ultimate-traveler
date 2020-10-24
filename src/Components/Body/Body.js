@@ -4,11 +4,11 @@ import { useHistory } from 'react-router-dom';
 import LocationInfo from '../Database/LocationInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import SwiperCore, { Navigation, Pagination, Mousewheel, HashNavigation } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Mousewheel, HashNavigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 
-SwiperCore.use([Navigation, Pagination, Mousewheel, HashNavigation]);
+SwiperCore.use([Navigation, Pagination, Mousewheel, HashNavigation, Autoplay]);
 const Body = () => {
     const history = useHistory();
     const [locationId, setLocationId] = useState(4);
@@ -34,19 +34,10 @@ const Body = () => {
                         slidesPerView={3}
                         pagination={{ clickable: true }}
                         mousewheel={true}
+                        autoplay={{ delay: 800 }}
+                        loop={true}
                         hashNavigation={true}
                     >
-                        {
-                            LocationInfo.map((location) => {
-                                return (
-                                    <SwiperSlide style={{ minWidth: '250px' }} key={location.id}>
-                                        <div className={`card ${location.section}`} onClick={() => setLocationId(location.id)}>
-                                            <h3 className="mt-auto mb-5 ml-3">{location.location}</h3>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            })
-                        }
                         {
                             LocationInfo.map((location) => {
                                 return (
