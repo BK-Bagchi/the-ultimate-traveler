@@ -4,10 +4,14 @@ import { useHistory } from 'react-router-dom';
 import LocationInfo from '../Database/LocationInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import SwiperCore, { Navigation, Pagination, Mousewheel, HashNavigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
 
+SwiperCore.use([Navigation, Pagination, Mousewheel, HashNavigation]);
 const Body = () => {
     const history = useHistory();
-    const [locationId, setLocationId] = useState(3);
+    const [locationId, setLocationId] = useState(4);
     const locationDetail = LocationInfo.filter(location => location.id === locationId)
 
     return (
@@ -25,15 +29,36 @@ const Body = () => {
                     })
                 }
                 <div className="col-md-7 d-flex flex-wrap justify-content-center">
-                    {
-                        LocationInfo.map((location) => {
-                            return (
-                                <div key={location.id} className={`card ${location.section}`} onClick={() => setLocationId(location.id)}>
-                                    <h3 className="mt-auto mb-5 ml-3">{location.location}</h3>
-                                </div>
-                            )
-                        })
-                    }
+                    <Swiper
+                        spaceBetween={7}
+                        slidesPerView={3}
+                        pagination={{ clickable: true }}
+                        mousewheel={true}
+                        hashNavigation={true}
+                    >
+                        {
+                            LocationInfo.map((location) => {
+                                return (
+                                    <SwiperSlide style={{ minWidth: '250px' }} key={location.id}>
+                                        <div className={`card ${location.section}`} onClick={() => setLocationId(location.id)}>
+                                            <h3 className="mt-auto mb-5 ml-3">{location.location}</h3>
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
+                        {
+                            LocationInfo.map((location) => {
+                                return (
+                                    <SwiperSlide style={{ minWidth: '250px' }} key={location.id}>
+                                        <div className={`card ${location.section}`} onClick={() => setLocationId(location.id)}>
+                                            <h3 className="mt-auto mb-5 ml-3">{location.location}</h3>
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
+                    </Swiper>
                 </div>
             </div>
         </section>

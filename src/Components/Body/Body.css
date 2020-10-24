@@ -25,7 +25,8 @@
 }
 .main-body .card{
     min-height: 400px;
-    background: #F9A51A;
+    /* background: #F9A51A; */
+    background: transparent;
     margin: 10px 10px;
     min-width: 250px;
     background-position: center;
@@ -43,5 +44,8 @@
 }
 .main-body .three{
     background-image: url('../../Resources//Image/sundorbon.png');
+}
+.main-body .four{
+    background-image: url('../../Resources//Image/Sajek.png');
 }
 /* .main-body */
